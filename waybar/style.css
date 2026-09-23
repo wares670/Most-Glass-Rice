@@ -1,0 +1,114 @@
+*{
+    font-family:"JetBrains Mono", "JetBrainsMono Nerd Font", "JetBrainsMonoNF", "Symbols Nerd Font", sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: #F6F5F4;
+}
+
+window#waybar {
+    background: rgba (0, 0, 0, 0.6);
+    border: none;
+    border-radius: 8px;
+    margin: 8px 12px;
+    padding: 8px 15px;
+}
+.modules-left > widget,
+.modules-center > widget,
+.modules-right > widget {
+    padding: 0 24px; /* Pushes modules away from each other */
+}
+
+#workspaces,
+#mpris,
+#battery,
+#wireplumber,
+#network,
+#clock,
+#tray,
+#custom-launcher,
+#custom-lock {
+    background: transparent;
+    border: none;
+    margin: 0 4px;
+    padding: 4px 2px;
+    border-radius: 12px;
+}
+#workspaces {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white tint */
+    padding: 0px 8px;                          /* Space inside the pill */
+    margin: 4px 6px;                            /* Space outside the pill */
+    border-radius: 6px;
+}
+
+
+#custom-tab{
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white tint */
+    padding: 0px 12px;                          /* Space inside the pill */
+    margin: 4px 6px;                            /* Space outside the pill */
+    border-radius: 8px;
+}
+
+#workspaces button {
+	font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 10px;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    border: none;
+    font-weight: 900;
+    background: none;
+    text-shadow: 
+        0 0 4px #ffffff,
+        0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+#workspaces button:hover {
+    background: #a6e3a1;
+    color: #a6a6a6;
+}
+
+#workspaces button.urgent {
+    background: #8C4A3A;
+    color: #F0D6A3;
+    border-radius: 4px;
+}
+
+#wireplumber.muted {
+    opacity: 0.55;
+}
+
+#custom-lock {
+    color: #F6F5F4;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white tint */
+    padding: 0px 8px;                          /* Space inside the pill */
+    margin: 4px 6px;                            /* Space outside the pill */
+    border-radius: 4px;
+}
+
+#custom-lock:hover {
+    color: crimson;
+}
+
+tooltip {
+    background: #a6a6a6;
+    border: 1px solid #a6e3a1;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #D8C4A8;
+    font-size: 11px;
+}
+#clock {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white tint */
+    padding: 0px 8px;                          /* Space inside the pill */
+    margin: 4px 6px;                            /* Space outside the pill */
+    border-radius: 4px;                         /* Makes the corners rounded */
+}
