@@ -1,0 +1,93 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/fedora.txt",
+    "color": {
+      "1": "#C4A7E7"
+    },
+    "padding": {
+      "top": 2,
+      "right": 6,
+      "left": 2
+    }
+  },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    "break",
+    "break",
+    {
+      "type": "title",
+      "keyWidth": 10,
+      "color": "#C4A7E7"
+    },
+    "break",
+    {
+      "type": "os",
+      "key": " ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4",
+      "format": "Fedora (Btw)"
+    },
+    {
+      "type": "host",
+      "key": "🖥 ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4",
+      "format": "BlockBook neo"
+    },
+    {
+      "type": "shell",
+      "format": "Pain in my baAHHsh",
+      "key": ">_",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4"
+    },
+    {
+      "type": "terminal",
+      "key": "󰆍 ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4"
+    },
+    {
+      "type": "wm",
+      "format": "{} (wayland)",
+      "key": "󱂬 ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4"
+    },
+    {
+      "type": "cpu",
+      "key": "󰍛 ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4",
+      "format": "Intel i5 6300u"
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4",
+      "format": "None lol"
+    },
+    {
+      "type": "memory",
+      "key": "🎟 ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4",
+      "format": "{} {}"
+    },
+    
+    {
+      "type": "uptime",
+      "key": " ",
+      "keyColor": "#c4a7e7",
+      "color": "#e0def4"
+    },
+    
+    "break",
+    "break",
+    "break"
+  ]
+}
