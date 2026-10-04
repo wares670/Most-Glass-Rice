@@ -55,8 +55,7 @@ local menu        = "rofi -show drun"
 --
 hl.on("hyprland.start", function ()
    hl.exec_cmd("waybar") 
-   hl.exec_cmd("waypaper")
-   hl.exec_cmd("swaybg -i ~/Downloads/thumb-1920-1414429.jpg -m fill")
+   hl.exec_cmd("swaybg -i ~/Downloads/wallhaven-lydkg2.png  -m fill")
  end)
 
 
@@ -81,7 +80,7 @@ hl.layer_rule({
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -112,16 +111,14 @@ hl.config({
         gaps_in  = 7,
         gaps_out = 12,
 
-        border_size = 0,
-
+        border_size = 1,
+	
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            active_border   = "0xffd3d3d3",
             inactive_border = "rgba(595959aa)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
-
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
@@ -133,8 +130,8 @@ hl.config({
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 0.7,
-        inactive_opacity = 0.5,
+        active_opacity   = 0.6,
+        inactive_opacity = 0.4,
 
         shadow = {
             enabled      = true,
@@ -145,9 +142,9 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 14,
-            passes    = 2,
-            vibrancy  = 0.18086,
+            size      = 8,
+            passes    = 3,
+            vibrancy  = 0.2,
         },
     },
 
@@ -243,8 +240,6 @@ hl.config({
 ----  MISC  ----
 ----------------
 
-
-
 hl.config({
     misc = {
         force_default_wallpaper = 1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
@@ -302,7 +297,7 @@ local closeWindowBind = hl.bind(mainMod .. " + D", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
@@ -372,7 +367,6 @@ hl.window_rule({
         fullscreen = false,
         pin        = false,
     },
-
     no_focus = true,
 })
 
@@ -392,3 +386,4 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
