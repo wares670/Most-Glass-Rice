@@ -4,39 +4,31 @@
   "spacing": 15,
   "height": 35,
   "margin-top": 3,
-  "margin-left": 300,
-  "margin-right": 300,
+  "margin-left": 225,
+  "margin-right": 225,
 
-  "modules-left": [
-  "custom/tab",
-  "hyprland/workspaces",
-  "custom/cliphist"
-  ],
-  "modules-center": [
-    "clock"
-  ],
+  "modules-left": ["custom/tab", "hyprland/workspaces", "custom/cliphist"],
+  "modules-center": ["clock"],
 
   "modules-right": [
     "network",
+    "custom/weather",
     "wireplumber",
-    "backlight",
     "battery",
-    "custom/notification",
     "custom/lock",
     "custom/power"
   ],
-	
+
   "network": {
-    "interface": "wlp1s0",
-    "format": "<span font='JetBrainsMono NF'>{icon}</span>",
-    "on-click": "kitty -e nmtui",
-    "tooltip": false,
-    "icon": " "
+    "format-wifi": " ",
+    "format-ethernet": "     Connected",
+    "format-disconnected": "󰼡 ",
+    "tooltip-format": "Interface: {ifname}\nIP: {ipaddr}\nSignal: {signalStrength}%",
+    "on-click": "kitty -e nmtui"
   },
 
-
   "custom/tab": {
-    "format": "\u200B  ",
+    "format": "Apps",
     "on-click": "rofi -show drun"
   },
 
@@ -44,7 +36,7 @@
     "format": "{name}",
     "on-click": "activate",
     "sort-by-number": true
-   },
+  },
   "tray": {
     "icon-size": 16,
     "spacing": 6
@@ -52,36 +44,45 @@
 
   "wireplumber": {
     "scroll-step": 5,
-    "format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "format-muted": " muted",
     "on-click": "pavucontrol",
     "format-icons": {
-      "default": [""]
+      "default": [""]
     }
   },
 
-  "battery":{
-    "format": "{icon} {icon} {capacity}%",
-    "icon": "󱐋"
+  "battery": {
+    "format": " {capacity}%",
+        "format-charging": " {capacity}% ",
+        "format-icons": [" ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "],
+        "tooltip-format": "Battery: {capacity}%"
   },
 
   "clock": {
-    "format": "{:%I:%M %p}"
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "custom/cliphist": {
-    "format": "\ued7b",
+    "format": "󰅇 ",
     "on-click": "cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy",
     "on-click-right": "cliphist wipe", // Right-click clears your clipboard history
     "tooltip": true,
     "tooltip-format": "Left-click: Open History\nRight-click: Clear History"
-},
-
-
+  },
 
   "custom/lock": {
     "format": " ",
     "on-click": "hyprlock",
     "tooltip": true,
     "tooltip-format": "Lock Screen"
-  }
+  },
+  "custom/weather": {
+        "format": "  {}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "curl -s 'wttr.in/?format=%t' | tr -d '+ \n\r'",
+        "return-type": "",
+        "on-click": "xdg-open https://wttr.in/"
+    }
 }
